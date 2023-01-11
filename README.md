@@ -28,10 +28,14 @@ If the control input is changed to 11, then all gates are restricted except the 
 
 ## What is Demultiplexer?
 De-multiplexer is also a device with one input and multiple output lines. It is used to send a signal to one of the many devices. The main difference between a multiplexer and a de-multiplexer is that a multiplexer takes two or more signals and encodes them on a wire, whereas a de-multiplexer does reverse to what the multiplexer does.
+
 ![image](https://user-images.githubusercontent.com/36288975/170912606-a30e4b74-1726-4430-b245-2c3c3d9c232d.png)
+
 Figure 3 De-multiplexer 
 1-4 Demultiplexer
-The 1-to-4 demultiplexer comprises 1- input bit, 4-output bits, and control bits. The 1X4 demultiplexer circuit diagram is shown below.![image](https://user-images.githubusercontent.com/36288975/170912683-00fb746a-1d45-4023-91d1-3a70b841073c.png)
+The 1-to-4 demultiplexer comprises 1- input bit, 4-output bits, and control bits. The 1X4 demultiplexer circuit diagram is shown below.
+
+![image](https://user-images.githubusercontent.com/36288975/170912683-00fb746a-1d45-4023-91d1-3a70b841073c.png)
 
 ![image](https://user-images.githubusercontent.com/36288975/170912741-7cbd52af-7e0d-4be3-b5c6-6fb9c4eca7c9.png)
 
@@ -47,42 +51,81 @@ If the control input changes to AB = 10, then all the gates are restricted excep
  
  
 ### Procedure
-/* write all the steps invloved */
-
-
+#### step1: Start the module using module projname().
+#### step2: Declare the inputs and outputs along with the select lines according to the multiplexer and demultiplexer.
+#### step3: Use wire to assign intermediate outputs.
+#### step4: Use and,or and not gates to get the desired output.
+#### step5: End the module.
+#### step6: Generate RTL realization and timing diagrams.
 
 ### PROGRAM 
-/*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+#### Developed by: s.vinod kumar
+#### RegisterNumber: 22004903
+```
+MUTLIPLEXER:
 
+module multiplexer(I0,I1,I2,I3,s0,s1,y);
+input I0,I1,I2,I3,s0,s1;
+output y;
+not(s0c,s0);
+nor(s1c,s1);
+wire p,q,r,s,soc,s1c;
+and(p,s0c,s1c,I0);
+and(q,s0c,s1,I1);
+and(r,s0,s1c,I2);
+and(s,s0,s1,I3);
+or(y,p,q,r,s);
+endmodule
 
+DEMULTIPLEXER:
 
+module demux(Y0,Y1,Y2,Y3,S0,S1,I);
+input S0,S1,I;
+output Y0,Y1,Y2,Y3;
+wire S0C,S1C;
+not(S0C,S0);
+not(S1C,S1);
+and(Y0,I,S0C,S1C);
+and(Y1,I,S0C,S1);
+and(Y2,I,S0,S1C);
+and(Y3,I,S0,S1);
+endmodule
 
-
-
+```
 ### RTL LOGIC  
+MULTIPLEXER:
+![output](/multiplexer.png)
 
-
-
-
-
-
-
+DEMULTIPLEXER:
+![output](/demux.png)
 
 ### TIMING DIGRAMS  
+MULTIPLEXER:
+WHEN I0=1
+![output](/mux%20i0%3D1.png)
 
+ WHEN I1=1
+![output](/mux%20i1%3D1%20(2).png)
 
+WHEN I2=1
+![output](/muxi2%3D1.png)
 
+WHEN I3=1
+![output](/mux13%3D1.png)
 
+DEMULTIPLEXER:
+![output](/demux%20(2).png)
 
 ### TRUTH TABLE 
+MULTIPLEXER:
+![output](/mux%20truthtable.png)
 
-
-
-
-
+DEMULTIPLEXER:
+![output](/de-multiplexer%20truth%20table.png)
 
 ### RESULTS 
+
+Hence 4x1 Multiplexer and 1x4 Demultiplexer is been implemented and verified using verilog programming and its output are validated.
+
+
