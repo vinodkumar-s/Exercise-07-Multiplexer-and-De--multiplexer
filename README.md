@@ -13,12 +13,16 @@ The multiplexer is a device that has multiple inputs and single line output. The
 The single-pole multi-position switch is a simple example of a non-electronic circuit of the multiplexer, and it is widely used in many electronic circuits. The multiplexer is used to perform high-speed switching and is constructed by electronic components.
 
 ![image](https://user-images.githubusercontent.com/36288975/170912485-73c395c7-23c0-4e78-a53d-a2f0d07d9662.png)
-          Figure-01 multiplexer block diagram 
+          
+          
+ Figure-01 multiplexer block diagram 
 
 Multiplexers are capable of handling both analog and digital applications. In analog applications, multiplexers are made up of relays and transistor switches, whereas in digital applications, the multiplexers are built from standard logic gates. When the multiplexer is used for digital applications, it is called a digital multiplexer.
 
 4-to-1 Multiplexer
 The 4X1 multiplexer comprises 4-input bits, 1- output bit, and 2- control bits. The four input bits are namely 0, D1, D2, and D3, respectively; only one of the input bits is transmitted to the output. The o/p ‘q’ depends on the value of control input AB. The control bit AB decides which of the i/p data bit should transmit the output. The following figure shows the 4X1 multiplexer circuit diagram using AND gates. For example, when the control bits AB =00, then the higher AND gates are allowed while remaining AND gates are restricted. Thus, data input D0 is transmitted to the output ‘q”
+
+
 ![image](https://user-images.githubusercontent.com/36288975/170912568-3598c60a-5035-41f3-b0c4-ccedba13aca5.png)
 
 
@@ -101,27 +105,39 @@ DEMULTIPLEXER:
 ![output](/demux.png)
 
 ### TIMING DIGRAMS  
+
 MULTIPLEXER:
+
 WHEN I0=1
+
 ![output](/mux%20i0%3D1.png)
 
  WHEN I1=1
+ 
 ![output](/mux%20i1%3D1%20(2).png)
 
 WHEN I2=1
+
 ![output](/muxi2%3D1.png)
 
 WHEN I3=1
+
 ![output](/mux13%3D1.png)
 
 DEMULTIPLEXER:
+
+
 ![output](/demux%20(2).png)
 
 ### TRUTH TABLE 
 MULTIPLEXER:
+
+
 ![output](/mux%20truthtable.png)
 
 DEMULTIPLEXER:
+
+
 ![output](/de-multiplexer%20truth%20table.png)
 
 ### RESULTS 
